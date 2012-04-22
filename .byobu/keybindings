@@ -1,0 +1,20 @@
+source /usr/share/byobu/keybindings/f-keys
+# For mintty
+termcapinfo xterm-color 'k1=\EOP:k2=\EOQ:k3=\EOR:k4=\EOS'
+escape ^Aa
+register d "^a:source /usr/share/byobu/keybindings/screen-escape-keys^M"
+register e "^a:source /usr/share/byobu/keybindings/f-keys^M"
+
+bindkey -k k1 select 0 #                         F1 | Select Window 0
+bindkey -k k2 select 1 #                         F2 | Select Window 0
+bindkey -k k3 select 2 #                         F3 | Select Window 0
+bindkey -k k4 select 3 #                         F4 | Select Window 0
+bindkey -k k5 select 4 #                         F5 | Select Window 0
+bindkey -k k6 select 5 #                         F6 | Select Window 0
+#                                                F7 | Copy Mode (Default)
+register r "^a:source $HOME/.byobu/profile^M" #     | Goes with F8 definition
+bindkey -k k8 process r #                        F8 | Reload Profile
+#                                                F9 | Config Mode (Default)
+register t "^aA^aa^k^h" #                           | Goes with the F10 definition
+bindkey -k k; process t #                        F10| Re-title a window
+
